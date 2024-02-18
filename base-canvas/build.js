@@ -7,9 +7,12 @@ function rebuild() {
   console.log(`Rebuilding... (${new Date().toLocaleString()})`)
 
   try {
-    execSync(`esbuild res/js/src/main.js --bundle --outfile=res/js/bundle.js`, {
-      encoding: "utf8",
-    })
+    execSync(
+      `npx esbuild res/js/src/main.js --bundle --outfile=res/js/bundle.js`,
+      {
+        encoding: "utf8",
+      },
+    )
 
     console.log("\nDone! 🎉\n")
   } catch (e) {
