@@ -2,15 +2,19 @@
 // CSS
 // -----------------------------------------------------------------------------
 
-const css = /* css */ ``
+const css = /* css */ `
+  .message {
+    color: blue;
+  }
+`
 
 // -----------------------------------------------------------------------------
 // HTML
 // -----------------------------------------------------------------------------
 
 const template = /* html */ `
-  <div class="x-app">
-    <x-message :text="message"></x-message>
+  <div class="message">
+    {{ message }}
   </div>
 `
 
@@ -18,16 +22,11 @@ const template = /* html */ `
 // JS
 // -----------------------------------------------------------------------------
 
-const createVueComponentWithCSS = require("@jrc03c/vue-component-with-css")
-const MessageComponent = require("../components/message")
+import { createVueComponentWithCSS } from "@jrc03c/vue-component-with-css"
 
-module.exports = createVueComponentWithCSS({
+const AppComponent = createVueComponentWithCSS({
   name: "x-app",
   template,
-
-  components: {
-    "x-message": MessageComponent,
-  },
 
   data() {
     return {
@@ -36,3 +35,5 @@ module.exports = createVueComponentWithCSS({
     }
   },
 })
+
+export { AppComponent }

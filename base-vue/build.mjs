@@ -1,6 +1,6 @@
-const { execSync } = require("node:child_process")
-const process = require("node:process")
-const watch = require("@jrc03c/watch")
+import { execSync } from "node:child_process"
+import { watch } from "@jrc03c/watch"
+import process from "node:process"
 
 function rebuild() {
   console.log("\n-----\n")
@@ -8,7 +8,7 @@ function rebuild() {
 
   try {
     execSync(
-      `npx esbuild res/js/src/main.js --bundle --outfile=res/js/bundle.js`,
+      `npx esbuild res/js/src/main.mjs --bundle --outfile=res/js/bundle.js`,
       {
         encoding: "utf8",
       },
