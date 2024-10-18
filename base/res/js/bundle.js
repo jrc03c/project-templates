@@ -1,4 +1,4 @@
 (() => {
-  // res/js/src/main.js
+  // res/js/src/main.mjs
   console.log("Hello, world!");
 })();
