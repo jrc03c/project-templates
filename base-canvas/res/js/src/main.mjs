@@ -1,5 +1,5 @@
 const width = 512
-const height = 512
+const height = width
 const canvas = document.createElement("canvas")
 canvas.width = width
 canvas.height = height

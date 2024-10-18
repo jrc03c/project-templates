@@ -1,7 +1,7 @@
 (() => {
-  // res/js/src/main.js
+  // res/js/src/main.mjs
   var width = 512;
-  var height = 512;
+  var height = width;
   var canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;
