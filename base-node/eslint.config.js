@@ -5,10 +5,10 @@ export default [
   {
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
-      rules: {
-        "no-empty": ["error", { allowEmptyCatch: true }],
-        "no-unused-vars": ["error", { caughtErrors: "none" }],
-      },
+    },
+    rules: {
+      "no-empty": ["error", { allowEmptyCatch: true }],
+      "no-unused-vars": ["error", { caughtErrors: "none" }],
     },
   },
   pluginJs.configs.recommended,
