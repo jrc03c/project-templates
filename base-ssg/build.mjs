@@ -9,8 +9,8 @@ function rebuild() {
   console.log(`Rebuilding... (${new Date().toLocaleString()})`)
 
   try {
-    fs.rmSync("dist", { force: true, recursive: true })
-    fs.mkdirSync("dist", { recursive: true })
+    execSync(`rm -rf dist`, { encoding: "utf8" })
+    execSync(`mkdir -p dist`, { encoding: "utf8" })
     execSync(`npx @11ty/eleventy`, { encoding: "utf8" })
     console.log("\nDone! 🎉\n")
   } catch (e) {
