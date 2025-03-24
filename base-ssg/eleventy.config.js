@@ -7,7 +7,7 @@ export default async function (config) {
   // Set the input directory:
   config.setInputDirectory("src")
 
-  // Define paths that are relative to the input directory:
+  // Declare important paths relative to the input directory:
   config.setLayoutsDirectory("layouts")
   config.setIncludesDirectory("layouts/includes")
   config.setDataDirectory("data")
@@ -34,13 +34,13 @@ export default async function (config) {
     console.log(value)
   })
 
+  config.addFilter("to-locale-date-string", value => {
+    return new Date(value).toUTCString()
+  })
+
   // asynchronous:
   config.addAsyncFilter("filter-name", async value => {
     console.log(value)
-  })
-
-  config.addFilter("to-locale-date-string", value => {
-    return new Date(value).toUTCString()
   })
 
   // Add pass-through file copy:
